@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gert Lula | Software Engineer | The Smart Programmer</title>
+<meta name="description" content="Gert Lula – Software Engineer and founder of The Smart Programmer. Explore my projects, skills, and personal portfolio.">
+<meta name="google-site-verification" content="0JzQCEPZKutzTNsG2QFGZJnrN_moul5uh6mCkedQlXc" />
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:Arial,sans-serif;background:#0f172a;color:white;}
+
+nav{
+    width:100%;
+    background:#111827;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 40px;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{font-weight:bold;font-size:18px;}
+
+.nav-links{display:flex;gap:25px;align-items:center;}
+
+.nav-links a{
+    text-decoration:none;
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.nav-links a:hover{color:#38bdf8;}
+
+.menu-toggle{display:none;font-size:24px;cursor:pointer;}
+
+.section{
+    width:100%;
+    min-height:calc(100vh - 70px);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:40px;
+}
+
+.section.active{display:flex;}
+
+.card{
+    width:100%;
+    max-width:1000px;
+    background:#1e293b;
+    padding:50px;
+}
+
+.card h2{margin-bottom:20px;font-size:28px;font-weight:bold;}
+.card p{margin-bottom:20px;color:#cbd5e1;line-height:1.6;}
+
+form{display:flex;flex-direction:column;gap:15px;}
+
+input, textarea, select{
+    padding:12px;
+    border:none;
+    border-radius:5px;
+}
+
+button{
+    padding:12px;
+    background:#38bdf8;
+    border:none;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+button:hover{background:#0ea5e9;}
+
+.contact-links{
+    margin-top:25px;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+.contact-links a{
+    color:#38bdf8;
+    text-decoration:none;
+}
+
+@media(max-width:768px){
+    .nav-links{
+        position:absolute;
+        top:70px;
+        right:0;
+        background:#111827;
+        flex-direction:column;
+        width:220px;
+        padding:20px;
+        display:none;
+    }
+    .nav-links.active{display:flex;}
+    .menu-toggle{display:block;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+    <div class="logo">Gert Lula</div>
+    <meta name="description" content="Gert Lula – Software Engineer and founder of The Smart Programmer. Specializing in web, app development, and digital solutions.">
+
+    <div class="nav-links" id="navLinks">
+        <a onclick="showSection('dashboard')">Dashboard</a>
+        <a onclick="showSection('projects')">My Projects</a>
+        <a onclick="showSection('company')">My Company</a>
+        <a onclick="showSection('contact')">Contact</a>
+
+        <!-- ORCID LINK -->
+        <a href="https://orcid.org/0009-0000-0728-1640" target="_blank">
+            My ORCID
+        </a>
+    </div>
+
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+</nav>
+
+<!-- DASHBOARD -->
+<div id="dashboard" class="section active">
+    <div class="card">
+        <h2>Dashboard</h2>
+        <a href="https://thsp591.wixsite.com/thsp">Website of the company</a>
+        <p>
+            Welcome to my personal website.
+
+            I am Gert Lula, a technology professional with extensive experience in front-end development (HTML, CSS, JavaScript), Python programming, Linux systems, and cybersecurity.
+
+            With a strong focus on performance, innovation, and execution, I am progressing toward a career in Software Engineering. My background includes active participation in technical events and collaborative initiatives that strengthen both my technical and leadership capabilities.
+
+            As the founder of my own company, operating for over a year, I have successfully delivered projects that have achieved more than 1,500 views and measurable engagement.
+
+            I invite you to explore my work, expertise, and business initiatives in greater detail.
+        </p>
+    </div>
+</div>
+
+<!-- PROJECTS -->
+<div id="projects" class="section">
+    <div class="card">
+        <h2>My Projects</h2>
+        <p>
+           Some of my projects are: IT Ticketing; My business website; Mini Gaming Zone; Smart School Portal; STEM Laboratory (most viewed and most favorite); Tracking Package; Tracking Package website, etc. If you want to see any of my projects or want to get them, just contact me from the 'Contact' page in the menu! 
+        </p>
+    </div>
+</div>
+
+<!-- COMPANY -->
+<div id="company" class="section">
+    <div class="card">
+        <h2>My Company</h2>
+        <p>
+            The Smart Programmer is a technology-focused company specializing in software development, web and mobile applications, digital solutions, and cybersecurity services. With over a year of successful operations, The Smart Programmer delivers professional, scalable, and innovative solutions tailored for students, individuals, and businesses seeking high-quality technology services.
+
+Founded with a vision to bridge the gap between technical expertise and practical applications, the company has executed numerous projects that have achieved significant engagement and visibility. By leveraging modern technologies, best practices in programming, and a strong focus on innovation, The Smart Programmer continues to establish itself as a trusted partner for digital growth, software development, and tech-driven business solutions.
+
+Keywords optimized for SEO: Software Development, Web Development, Mobile Apps, Digital Solutions, Cybersecurity, Technology Company, Technical Services, Programming, Innovation.
+        </p>
+    </div>
+</div>
+
+<!-- CONTACT -->
+<div id="contact" class="section">
+    <div class="card">
+        <h2>Contact</h2>
+
+        <form onsubmit="sendEmail(event)">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="email" id="email" placeholder="Your Email" required>
+            <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
+
+            <select id="recipient">
+                <option value="personal">Send to Personal Email</option>
+                <option value="business">Send to Business Email</option>
+            </select>
+
+            <button type="submit">Send Message</button>
+        </form>
+
+        <div class="contact-links">
+            <strong>Direct Contact:</strong>
+            <a href="mailto:gertlula2003@gmail.com">📩 Personal Email</a>
+            <a href="mailto:thesmartprogrammer591@gmail.com">🏢 Business Email</a>
+            <a href="https://thsp591.wixsite.com/thsp" target="_blank">
+                🌐 Visit Business Website
+            </a>
+        </div>
+    </div>
+</div>  
+
+<script>
+function showSection(id){
+    document.querySelectorAll('.section').forEach(sec=>{
+        sec.classList.remove('active');
+    });
+    document.getElementById(id).classList.add('active');
+    document.getElementById('navLinks').classList.remove('active');
+}
+
+function toggleMenu(){
+    document.getElementById('navLinks').classList.toggle('active');
+}
+
+function sendEmail(event){
+    event.preventDefault();
+
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+    const recipientType = document.getElementById('recipient').value;
+
+    let recipientEmail = recipientType === "personal" 
+        ? "gertlula2003@gmail.com" 
+        : "thesmartprogrammer591@gmail.com";
+
+    window.location.href = 
+        `mailto:${recipientEmail}?subject=Message from ${name}&body=From: ${email}%0D%0A%0D%0A${message}`;
+}
+</script>
+
+</body>
+</html>
