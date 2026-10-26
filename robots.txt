@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://gertlula.com/sitemap.xml
+Sitemap: https://gertlula.github.io/portofolio/sitemap.xml
